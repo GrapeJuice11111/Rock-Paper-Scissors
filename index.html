@@ -8,13 +8,21 @@
 <body>
     <script>
 
-        
+      // This function generates a random number upto 3 and picks a string out from Array  
      function getComputerChoice(){
         let choices = ["Rock","Paper","Scissors"];
-        computerChoice = choices[Math.floor(Math.random() * 3)] 
+        computerChoice = choices[Math.floor(Math.random() * 3)]; 
         return computerChoice;
      }
-     
+
+
+
+     // This function will ask a input from user with prompt. The input will be case insensitive as we will use a function called toUpperCase()
+     function getUsersChoice(){
+        let usersChoice = prompt("Pick A Choice From Rock, Paper and Scissors");
+        usersChoice = usersChoice.toUpperCase();
+        return usersChoice;
+     } 
 
     </script>
     
