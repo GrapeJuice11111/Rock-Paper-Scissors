@@ -10,7 +10,7 @@
 
       // This function generates a random number upto 3 and picks a string out from Array  
      function getComputerChoice(){
-        let choices = ["Rock","Paper","Scissors"];
+        let choices = ["rock","paper","scissors"];
         computerChoice = choices[Math.floor(Math.random() * 3)]; 
         return computerChoice;
      }
@@ -20,9 +20,46 @@
      // This function will ask a input from user with prompt. The input will be case insensitive as we will use a function called toUpperCase()
      function getUsersChoice(){
         let usersChoice = prompt("Pick A Choice From Rock, Paper and Scissors");
-        usersChoice = usersChoice.toUpperCase();
+        usersChoice = usersChoice.toLowerCase();
         return usersChoice;
      } 
+
+
+     /*This function will play first round of rock paper scissors with if else conditionals
+      with paraments (playerSelection and computerSelection)                                                                                                         
+      */
+     function playRound(playerSelection,computerSelection){
+        if( playerSelection === computerSelection ){
+            console.log("Draw. They both are the same thing");
+        }
+        else if( playerSelection === "rock" && computerSelection === "paper"){
+            console.log("Paper beats Rock. You lose.")
+        }
+        else if( playerSelection === "paper" && computerSelection === "rock" ){
+            console.log("Paper beats Rock. You win.")
+        }
+        else if( playerSelection === "scissors" && computerSelection === "rock"){
+            console.log("Rock beats Scissor. You lose");
+        } 
+        else if( playerSelection === "rock" && computerSelection === "scissors"){
+            console.log("Rock beats Scissors. You win.");
+        }
+        else if( playerSelection === "paper" && computerSelection === "scissors"){
+            console.log("Scissors beats Paper. You lose");
+        }
+        else if( playerSelection === "scissors" && computerSelection === "paper"){
+            console.log("Scissors beats Paper. You win");
+        }
+
+     } 
+     
+
+
+
+
+
+
+
 
     </script>
     
