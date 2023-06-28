@@ -7,7 +7,9 @@
 </head>
 <body>
     <script>
-
+        let counterForComputer = 0;
+        let counterForPlayer = 0;
+ 
       // This function generates a random number upto 3 and picks a string out from Array  
      function getComputerChoice(){
         let choices = ["rock","paper","scissors"];
@@ -30,25 +32,31 @@
       */
      function playRound(playerSelection,computerSelection){
         if( playerSelection === computerSelection ){
-            console.log("Draw. They both are the same thing");
+            return "Draw. They both are the same thing";
         }
         else if( playerSelection === "rock" && computerSelection === "paper"){
-            console.log("Paper beats Rock. You lose.")
+            counterForComputer = counterForComputer + 1;
+            return "Paper beats Rock. You lose.";
         }
         else if( playerSelection === "paper" && computerSelection === "rock" ){
-            console.log("Paper beats Rock. You win.")
+            counterForPlayer = counterForPlayer + 1;
+            return "Paper beats Rock. You win.";
         }
         else if( playerSelection === "scissors" && computerSelection === "rock"){
-            console.log("Rock beats Scissor. You lose");
+            counterForComputer = counterForComputer + 1;
+            return "Rock beats Scissor. You lose";
         } 
         else if( playerSelection === "rock" && computerSelection === "scissors"){
-            console.log("Rock beats Scissors. You win.");
+            counterForPlayer = counterForPlayer + 1;
+            return "Rock beats Scissors. You win.";
         }
         else if( playerSelection === "paper" && computerSelection === "scissors"){
-            console.log("Scissors beats Paper. You lose");
+            counterForComputer = counterForComputer + 1;
+            return "Scissors beats Paper. You lose";
         }
         else if( playerSelection === "scissors" && computerSelection === "paper"){
-            console.log("Scissors beats Paper. You win");
+            counterForPlayer = counterForPlayer + 1;
+            return "Scissors beats Paper. You win";
         }
 
      } 
@@ -56,6 +64,12 @@
      const playerSelection = getUsersChoice();
      const computerSelection = getComputerChoice();
      console.log(playRound(playerSelection,computerSelection));
+
+
+     function game(){
+        
+
+     }
      
 
 
