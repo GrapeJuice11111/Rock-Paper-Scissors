@@ -1,31 +1,5 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Rock-Paper-Scissors</title>
-    <link rel="stylesheet" href="styles.css">
-    <script src = "rps.js"></script>
-</head>
-<body>
-      <button class="rock">Rock</button>
-      <button class="paper">Paper</button>
-      <button class="scissors">Scissors</button>
-
- <script>
-   const btns = document.querySelectorAll("button")
-   
-  btns.forEach(button => button.addEventListener('click', getUsersChoice));
-   
-
-   function getUsersChoice(e){
-    let className = this.classList.value;  
-    return className;
-   }
-
-
-   let counterForComputer = 0;
-let counterForPlayer = 0;
+counterForComputer = 0;
+counterForPlayer = 0;
 
 // This function generates a random number upto 3 and picks a string out from Array  
 function getComputerChoice(){
@@ -96,16 +70,3 @@ console.log("The Player has won. Congratulations")
 }
 game();
 
-
-
-
-
-
-
-
-
-  </script>
-
-
-</body>
-</html>
