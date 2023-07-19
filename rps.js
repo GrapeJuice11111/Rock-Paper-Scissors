@@ -2,10 +2,14 @@ const btns = document.querySelectorAll("button");
 const counterForComputer = 0;
 const counterForPlayer = 0;
 btns.forEach(button => button.addEventListener('click', function(e){
-var userChoice = ""
-userChoice = this.classList.value;
-console.log(userChoice);
-   function getComputerChoice(){
+    if( counterForComputer > 5 || counterForPlayer > 5){
+     console.log("END");
+    }
+    else{
+     var userChoice = ""
+   userChoice = this.classList.value;
+   console.log(userChoice);
+    function getComputerChoice(){
     let choices = ["rock","paper","scissors"];
     computerChoice = choices[Math.floor(Math.random() * 3)]; 
     return computerChoice;
@@ -41,4 +45,11 @@ console.log(userChoice);
     }
 }
   console.log(playRound(userChoice,getComputerChoice()));
-}));
+}}
+));
+if (counterForComputer === 5) {
+    console.log("The computer has won. Dont worry Player is smarter than computer.");
+    }
+    else if(counterForPlayer === 5){
+    console.log("The Player has won. Congratulations")
+    }
