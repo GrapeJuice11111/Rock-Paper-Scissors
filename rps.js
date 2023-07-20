@@ -4,7 +4,13 @@ let counterForPlayer = 0;
 btns.forEach(button => button.addEventListener('click', function(e){
      var userChoice = ""
    userChoice = this.classList.value;
-   console.log(`You chose ${userChoice}`);
+   if (counterForComputer >= 5 || counterForPlayer >= 5 )
+   {
+    pick.textContent = ""
+   }
+   else{
+    pick.textContent = `You chose ${userChoice}`;
+   }
     function getComputerChoice(){
     let choices = ["rock","paper","scissors"];
     computerChoice = choices[Math.floor(Math.random() * 3)]; 
@@ -14,31 +20,31 @@ btns.forEach(button => button.addEventListener('click', function(e){
    }
    function playRound(playerSelection,computerSelection){
     if( playerSelection === computerSelection ){
-        console.log("Draw. They both are the same thing");
+        div.textContent = "Draw. They both are the same thing";
     }
     else if( playerSelection === "rock" && computerSelection === "paper"){
-        console.log("Paper beats Rock. You lose.");
+        div.textContent = "Paper beats Rock. You lose.";
         counterForComputer = counterForComputer + 1;
     }
     else if( playerSelection === "paper" && computerSelection === "rock" ){
-        console.log("Paper beats Rock. You win.");
+        div.textContent = "Paper beats Rock. You win.";
         counterForPlayer = counterForPlayer + 1;
 
     }
     else if( playerSelection === "scissors" && computerSelection === "rock"){
-        console.log("Rock beats Scissor. You lose");
+        div.textContent = "Rock beats Scissor. You lose";
         counterForComputer = counterForComputer + 1;
     } 
     else if( playerSelection === "rock" && computerSelection === "scissors"){
-        console.log("Rock beats Scissors. You win.");
+        div.textContent = "Rock beats Scissors. You win.";
         counterForPlayer = counterForPlayer + 1;
     }
     else if( playerSelection === "paper" && computerSelection === "scissors"){
-        console.log("Scissors beats Paper. You lose");
+        div.textContent = "Scissors beats Paper. You lose";
         counterForComputer = counterForComputer + 1;
     }
     else if( playerSelection === "scissors" && computerSelection === "paper"){
-        console.log("Scissors beats Paper. You win");
+        div.textContent = "Scissors beats Paper. You win";
         counterForPlayer = counterForPlayer + 1;
     }
 } 
@@ -46,9 +52,14 @@ btns.forEach(button => button.addEventListener('click', function(e){
     playRound(userChoice,getComputerChoice());
   }
   else if(counterForComputer === 5) {
-    console.log("The computer has won. Humanity is done for.");
+    div.textContent = "The computer has won. Humanity is done for.";
     }
     else if(counterForPlayer === 5){
-    console.log("The Player has won. Congratulations you saved us. You are the hero");
+    div.textContent = "The Player has won. Congratulations you saved us. You are the hero";
     }
 }));
+
+
+
+const div = document.querySelector(".results");
+const pick = document.querySelector(".pick")
